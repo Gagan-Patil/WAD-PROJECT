@@ -1,0 +1,347 @@
+
+/* =========================================
+   BOUNDARYPASS — IPL TICKET BOOKING
+   Theme: Midnight Navy & Stadium Gold
+   ========================================= */
+
+:root {
+    --primary: #101b35;
+    --primary-light: #1d3158;
+    --accent: #f4bd50;
+    --background: #f4f6fb;
+    --surface: #ffffff;
+    --text: #202a3b;
+    --muted: #68758a;
+    --border: #dce2ec;
+    --success: #18794e;
+    --shadow: 0 8px 24px rgba(16, 27, 53, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    line-height: 1.25;
+    color: var(--primary);
+}
+
+h1 {
+    margin: 0;
+    padding: 24px 5%;
+    background: var(--primary);
+    color: white;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+}
+
+p {
+    color: var(--muted);
+}
+
+a {
+    color: #174e9b;
+}
+
+a:hover {
+    color: #b77b0c;
+}
+
+/* Navigation */
+
+header nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--primary-light);
+    box-shadow: var(--shadow);
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 0;
+    padding: 12px 5%;
+    list-style: none;
+}
+
+header nav a {
+    display: inline-block;
+    padding: 9px 16px;
+    border-radius: 7px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+
+header nav a:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+/* Main content and sections */
+
+main {
+    width: min(1150px, 92%);
+    margin: 28px auto;
+}
+
+main > section {
+    margin-bottom: 28px;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 90px;
+}
+
+/* Hero banner */
+
+main > section:first-child {
+    padding: 55px 30px;
+    text-align: center;
+    background: linear-gradient(135deg, #101b35, #294878);
+    color: white;
+    border: none;
+}
+
+main > section:first-child h2 {
+    color: white;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+main > section:first-child p {
+    color: #e1e8f5;
+}
+
+main > section:first-child img {
+    display: block;
+    width: 100%;
+    max-height: 380px;
+    margin: 22px auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+main > section:first-child a {
+    display: inline-block;
+    margin: 8px;
+    padding: 11px 20px;
+    border-radius: 7px;
+    background: var(--accent);
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main > section:first-child a:hover {
+    background: white;
+}
+
+/* Lists */
+
+section ul {
+    padding-left: 24px;
+}
+
+section li {
+    margin-bottom: 5px;
+}
+
+/* Forms and controls */
+
+form {
+    margin-top: 15px;
+}
+
+label {
+    display: inline-block;
+    margin: 8px 0 4px;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #bdc8d8;
+    border-radius: 7px;
+    background: white;
+    color: var(--text);
+    font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: min(100%, 420px);
+}
+
+/* Buttons */
+
+button {
+    margin: 8px 5px 8px 0;
+    padding: 10px 17px;
+    border: none;
+    border-radius: 7px;
+    background: var(--primary);
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: #294878;
+    transform: translateY(-1px);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* Match schedule and booking tables */
+
+table {
+    width: 100%;
+    margin: 18px 0;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background: #f1f5fb;
+}
+
+tbody tr:hover {
+    background: #fff5dc;
+}
+
+/* Booking summary */
+
+#bookingSummary,
+.booking-summary,
+.summary-card {
+    margin-top: 20px;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--accent);
+    border-radius: 10px;
+    background: #fffaf0;
+}
+
+#bookingSummary p,
+.booking-summary p,
+.summary-card p {
+    margin: 7px 0;
+}
+
+/* Guidelines */
+
+#guidelines h3 {
+    padding-bottom: 7px;
+    border-bottom: 2px solid #f1d28e;
+}
+
+/* Footer */
+
+footer {
+    padding: 28px 5%;
+    background: var(--primary);
+    color: white;
+    text-align: center;
+}
+
+footer p,
+footer a {
+    color: #e1e8f5;
+}
+
+footer a:hover {
+    color: var(--accent);
+}
+
+/* Responsive layout */
+
+@media (max-width: 700px) {
+    h1 {
+        padding: 20px 4%;
+        font-size: 1.6rem;
+    }
+
+    header nav ul {
+        gap: 4px;
+        padding: 10px 3%;
+    }
+
+    header nav a {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    main {
+        width: 94%;
+        margin: 16px auto;
+    }
+
+    main > section {
+        padding: 18px;
+    }
+
+    main > section:first-child {
+        padding: 32px 16px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
