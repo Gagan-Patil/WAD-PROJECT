@@ -345,3 +345,115 @@ footer a:hover {
         white-space: nowrap;
     }
 }
+
+/* Activity 8 - Match Schedule Grid */
+#matches table tbody {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+#matches table tbody tr {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: var(--shadow);
+}
+
+#matches table tbody td {
+    padding: 8px;
+    border: none;
+}
+
+/* Tablet layout */
+@media (max-width: 900px) {
+    #matches table tbody {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+    #matches table tbody {
+        grid-template-columns: 1fr;
+    }
+}
+/* Activity 8 - Grid/List View Toggle */
+
+#matches table tbody.list-view {
+    grid-template-columns: 1fr;
+}
+
+#matches table tbody.list-view tr {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#matches table tbody.list-view td {
+    padding: 10px;
+}
+
+/* View toggle buttons */
+.view-toggle {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.view-toggle button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+
+.view-toggle button:hover {
+    background: var(--primary-light);
+}
+/* Activity 8 - Hamburger Menu */
+
+/* Hide hamburger on desktop */
+.hamburger {
+    display: none;
+}
+
+/* Mobile navigation */
+@media (max-width: 700px) {
+
+    .hamburger {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 16px;
+        font-size: 24px;
+        color: white;
+        background: var(--primary);
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    #nav-links li {
+        width: 100%;
+    }
+
+    #nav-links li a {
+        display: block;
+        padding: 12px;
+    }
+}

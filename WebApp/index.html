@@ -15,7 +15,10 @@
         <p>Your seat. Your team. Your moment.</p>
 
         <nav aria-label="Main navigation">
-            <ul>
+    <button type="button" id="menu-toggle" class="hamburger" aria-label="Toggle navigation">
+        ☰
+    </button>
+    <ul id="nav-links">
                 <li><a href="#matches">Match Schedule</a></li>
                 <li><a href="booking.html">Book Ticket</a></li>
                 <li><a href="#my-bookings">My Bookings</a></li>
@@ -97,6 +100,10 @@
                     <option value="LSG">Lucknow Super Giants</option>
                 </select>
             </form>
+            <div class="view-toggle">
+    <button type="button" id="grid-view-btn">Grid View</button>
+    <button type="button" id="list-view-btn">List View</button>
+</div>
 
             <br>
 
@@ -442,6 +449,33 @@ quantityInput.addEventListener("input", function () {
         });
 
         updateSummary();
+        // Activity 8 - Grid and List View Toggle
+const matchBody = document.getElementById("match-table-body");
+const gridBtn = document.getElementById("grid-view-btn");
+const listBtn = document.getElementById("list-view-btn");
+
+gridBtn.addEventListener("click", function () {
+    matchBody.classList.remove("list-view");
+    showToast("Grid View enabled");
+});
+
+listBtn.addEventListener("click", function () {
+    matchBody.classList.add("list-view");
+    showToast("List View enabled");
+});
+// Activity 8 - Mobile Hamburger Menu
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+
+    if (navLinks.classList.contains("active")) {
+        showToast("Navigation menu opened");
+    } else {
+        showToast("Navigation menu closed");
+    }
+});
     </script>
     <script src="../JAVA_SCRIPT/app.js"></script>
 
