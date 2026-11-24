@@ -368,9 +368,20 @@
                 "₹" + (price * quantity).toLocaleString("en-IN");
         }
 
-        matchSelect.addEventListener("change", updateSummary);
-        standSelect.addEventListener("change", updateSummary);
-        quantityInput.addEventListener("input", updateSummary);
+        matchSelect.addEventListener("change", function () {
+    updateSummary();
+    showToast("Booking summary updated!");
+});
+
+standSelect.addEventListener("change", function () {
+    updateSummary();
+    showToast("Booking summary updated!");
+});
+
+quantityInput.addEventListener("input", function () {
+    updateSummary();
+    showToast("Booking summary updated!");
+});
 
         document.getElementById("team-filter").addEventListener("change", function () {
             const selectedTeam = this.value;
